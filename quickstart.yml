@@ -59,6 +59,10 @@ services:
     depends_on:
       - sqlite
   consent:
+    # This service is optional and will NOT start by default.
+    # Start it explicitly with: docker compose --profile consent up consent
+    profiles:
+      - consent
     environment:
       - HYDRA_ADMIN_URL=http://hydra:4445
     image: oryd/hydra-login-consent-node:v2.3.0

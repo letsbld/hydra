@@ -12,11 +12,15 @@
 services:
   hydra-migrate:
     environment:
-      - DSN=postgres://hydra:secret@postgresd:5432/hydra?sslmode=disable&max_conns=20&max_idle_conns=4
+      - DSN=${DATABASE_URL:-postgres://hydra:secret@postgresd:5432/hydra?sslmode=disable&max_conns=20&max_idle_conns=4}
   hydra:
     environment:
-      - DSN=postgres://hydra:secret@postgresd:5432/hydra?sslmode=disable&max_conns=20&max_idle_conns=4
+      - DSN=${DATABASE_URL:-postgres://hydra:secret@postgresd:5432/hydra?sslmode=disable&max_conns=20&max_idle_conns=4}
   postgresd:
+    # This service is optional and will NOT start by default. To start it, pass:
+    #   docker compose --profile local-db up
+    profiles:
+      - local-db
     image: postgres:16
     ports:
       - "5432:5432"
