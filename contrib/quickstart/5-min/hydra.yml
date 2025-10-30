@@ -5,7 +5,7 @@ serve:
 
 urls:
   self:
-    issuer: http://sandy.lol:4444
+    issuer: https://oidc.sandy.lol
   consent: https://dashboard.sandy.lol/oidc/consent
   login: https://dashboard.sandy.lol/oidc/login
   logout: https://dashboard.sandy.lol/oidc/logout
