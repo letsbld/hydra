@@ -2,19 +2,13 @@ serve:
   cookies:
     same_site_mode: Lax
 
+
 urls:
   self:
-    issuer: http://localhost:4444
-  consent: http://localhost:3030/oidc/consent
-  login: http://localhost:3030/oidc/login
-  logout: http://localhost:3030/oidc/logout
-
-# urls:
-#   self:
-#     issuer: https://oidc.sandy.lol
-#   consent: https://dashboard.sandy.lol/oidc/consent
-#   login: https://dashboard.sandy.lol/oidc/login
-#   logout: https://dashboard.sandy.lol/oidc/logout
+    issuer: https://oidc.sandy.lol
+  consent: https://dashboard.sandy.lol/oidc/consent
+  login: https://dashboard.sandy.lol/oidc/login
+  logout: https://dashboard.sandy.lol/oidc/logout
 
 secrets:
   system:
